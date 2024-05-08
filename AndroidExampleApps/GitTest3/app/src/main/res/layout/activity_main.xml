@@ -51,18 +51,21 @@
                 android:id="@+id/Linear_Red"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorAceent"
                 android:orientation="horizontal"></LinearLayout>
 
             <LinearLayout
                 android:id="@+id/Linear_blue"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal"></LinearLayout>
 
             <LinearLayout
                 android:id="@+id/Linear_green"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
                 android:orientation="horizontal">
 
             </LinearLayout>
