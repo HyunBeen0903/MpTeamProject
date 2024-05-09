@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClick"
-                android:text="RED" />
+                android:text="로그인" />
 
             <Button
                 android:id="@+id/btn_blue"
@@ -32,15 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClick"
-                android:text="BLUE" />
-
-            <Button
-                android:id="@+id/btn_green"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                android:text="GREEN" />
+                android:text="회원가입" />
         </LinearLayout>
 
         <FrameLayout
@@ -51,22 +43,54 @@
                 android:id="@+id/Linear_Red"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorAceent"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:id="@+id/id">
+                </EditText>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pswd">
+                </EditText>
+
+                <Button
+                    android:id="@+id/loginbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="로그인">
+
+                </Button>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/Linear_blue"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:id="@+id/newid">
+                </EditText>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newpswd">
+                </EditText>
 
-            <LinearLayout
-                android:id="@+id/Linear_green"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"
-                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/getidbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="회원가입">
+
+                </Button>
 
             </LinearLayout>
         </FrameLayout>
