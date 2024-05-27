@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "740929890457",
-    "firebase_url": "https://seeheung-cabca-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "seeheung-cabca",
-    "storage_bucket": "seeheung-cabca.appspot.com"
+    "project_number": "703122053622",
+    "firebase_url": "https://seeheung-868d0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "seeheung-868d0",
+    "storage_bucket": "seeheung-868d0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:740929890457:android:bbf15ea9eca78ed827b008",
+        "mobilesdk_app_id": "1:703122053622:android:1dc987347606e5462a8fd7",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBkZB0COAnTqiKI_xNhHYcTkUbax58vk6U"
+          "current_key": "AIzaSyCH7VqH6AwfWwyozw6-EbLE6CYdEHMuGuo"
         }
       ],
       "services": {
