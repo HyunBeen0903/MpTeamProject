@@ -33,7 +33,9 @@
             android:layout_marginRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="passwd"/>
+            android:hint="passwd"
+            android:password="true"
+            tools:ignore="Deprecated" />
         <Button
             android:id="@+id/angry_btn"
             android:text="로그인"
