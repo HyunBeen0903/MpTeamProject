@@ -1,5 +1,5 @@
 package com.example.myapplication
-
+//박성일
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
