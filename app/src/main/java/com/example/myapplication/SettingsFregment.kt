@@ -1,0 +1,12 @@
+// 파일 경로: src/main/java/com/example/myapp/SettingsFragment.kt
+
+package com.example.myapplication
+
+import android.os.Bundle
+import androidx.preference.PreferenceFragmentCompat
+
+class SettingsFragment : PreferenceFragmentCompat() {
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.preferences, rootKey)
+    }
+}
