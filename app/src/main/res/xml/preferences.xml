@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 개인/보안 -->
+    <PreferenceCategory
+        android:title="개인/보안">
+
+        <EditTextPreference
+            android:key="username"
+            android:title="Username"
+            android:summary="Change your username"
+            android:defaultValue="User" />
+
+        <SwitchPreferenceCompat
+            android:key="password_protection"
+            android:title="Password Protection"
+            android:summary="Enable password protection"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <!-- 알림 -->
+    <PreferenceCategory
+        android:title="알림">
+
+        <SwitchPreferenceCompat
+            android:key="push_notifications"
+            android:title="Push Notifications"
+            android:summary="Enable or disable push notifications"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="email_notifications"
+            android:title="Email Notifications"
+            android:summary="Enable or disable email notifications"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <!-- 공지사항 -->
+    <PreferenceCategory
+        android:title="공지사항">
+
+        <Preference
+            android:key="notice"
+            android:title="View Notices"
+            android:summary="Check latest notices" />
+    </PreferenceCategory>
+
+    <!-- 고객센터/운영정책 -->
+    <PreferenceCategory
+        android:title="고객센터/운영정책">
+
+        <Preference
+            android:key="customer_service"
+            android:title="Customer Service"
+            android:summary="Contact customer service" />
+
+        <Preference
+            android:key="terms_of_service"
+            android:title="Terms of Service"
+            android:summary="View terms of service" />
+    </PreferenceCategory>
+
+    <!-- 버전 정보 -->
+    <PreferenceCategory
+        android:title="버전 정보">
+
+        <Preference
+            android:key="version"
+            android:title="Version"
+            android:summary="1.0.0" />
+    </PreferenceCategory>
+
+    <!-- 로그아웃 -->
+    <PreferenceCategory
+        android:title="로그아웃">
+
+        <Preference
+            android:key="logout"
+            android:title="Logout"
+            android:summary="Logout from your account" />
+    </PreferenceCategory>
+
+    <!-- 회원탈퇴 -->
+    <PreferenceCategory
+        android:title="회원탈퇴">
+
+        <Preference
+            android:key="delete_account"
+            android:title="Delete Account"
+            android:summary="Permanently delete your account" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
