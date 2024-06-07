@@ -11,11 +11,15 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 firebaseMessagingKtx = "24.0.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 googleAndroidLibrariesMapsplatformSecretsGradlePlugin = "2.0.1"
 playServicesMaps = "18.2.0"
 =======
 firebaseCommonKtx = "21.0.0"
 >>>>>>> refs/remotes/origin/jihun
+=======
+firebaseCommonKtx = "21.0.0"
+>>>>>>> a1d946f7a04880f4527f0d5c66e21d894dbf3bfc
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,10 +32,14 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
 <<<<<<< HEAD
+<<<<<<< HEAD
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 =======
 firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
 >>>>>>> refs/remotes/origin/jihun
+=======
+firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
+>>>>>>> a1d946f7a04880f4527f0d5c66e21d894dbf3bfc
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

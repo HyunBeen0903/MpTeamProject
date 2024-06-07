@@ -10,18 +10,13 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         setContentView(R.layout.activity_maps)
-
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -45,8 +40,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val sydney = LatLng(37.3401906, 126.7335293)
         mMap.addMarker(MarkerOptions().position(sydney).title("한국공대"))
-
-
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }
