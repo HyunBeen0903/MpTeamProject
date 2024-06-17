@@ -1,37 +1,27 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.kakao.sdk.common.util.Utility
-import com.kakao.sdk.user.Constants.TAG
-import com.kakao.sdk.user.UserApiClient
-
-// Kangjihun Branch
+import com.google.firebase.Firebase
+import com.google.firebase.database.database
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.messaging
+//Kangjihun Branch
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val keyHash = Utility.getKeyHash(this)
-        var kakaologin = findViewById<Button>(R.id.카카오톡로그인)
-        kakaologin.setOnClickListener{
-            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
-                if (error != null) {
-                    Log.e(TAG, "로그인 실패", error)
-                }
-                else if (token != null) {
-                    Log.i(TAG, "로그인 성공 ${token.accessToken}")
-                }
-            }
+        var txt = findViewById<TextView>(R.id.회원가입)
+        txt.setOnClickListener{
+            var intent = Intent(applicationContext, NewAccountPage::class.java)
+            startActivity(intent)
         }
+      //val database = Firebase.database
+      //  val myRef = database.getReference("message")
+      //  myRef.setValue("Hello, Firebase")
 
-
-
-        // val database = Firebase.database
-        // val myRef = database.getReference("message")
-        // myRef.setValue("Hello, Firebase")
     }
 }
-

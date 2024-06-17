@@ -27,7 +27,8 @@
             android:layout_marginRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="id"/>
+            android:hint="id"
+            android:id="@+id/idEditText"/>
         <EditText
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -35,9 +36,9 @@
             android:layout_height="wrap_content"
             android:hint="passwd"
             android:password="true"
-            tools:ignore="Deprecated" />
+            android:id="@+id/passwordEditTest"/>
         <Button
-            android:id="@+id/angry_btn"
+            android:id="@+id/login"
             android:text="로그인"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
@@ -78,7 +79,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="버튼5" />
+            android:text="지도"
+            android:id="@+id/지도"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

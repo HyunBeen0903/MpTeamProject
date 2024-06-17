@@ -21,6 +21,16 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAG4ilTFHpsOAuqEP-DX5fkhzHcRGSLGCI" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+
         <activity
             android:name=".NewAccountPage"
             android:exported="false" />
