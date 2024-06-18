@@ -75,21 +75,22 @@
         android:layout_weight="1"
         android:orientation="horizontal" >
         <Button
-            android:id="@+id/카카오톡로그인"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="지도"
             android:id="@+id/지도"/>
         <Button
+            android:id="@+id/카카오톡로그인"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="버튼6" />
+            android:text="카카오톡로그인" />
         <Button
+            android:id="@+id/홈화면이동"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="버튼6" />
+            android:text="홈화면" />
     </LinearLayout>
 </LinearLayout>
