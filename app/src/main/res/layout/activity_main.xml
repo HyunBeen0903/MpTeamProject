@@ -14,7 +14,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="40sp"
+            android:textSize="60sp"
+            android:fontWeight = "900"
+            android:fontFamily="@font/nanumhim"
             android:text="로그인" />
     </LinearLayout>
     <LinearLayout
@@ -40,8 +42,9 @@
         <Button
             android:id="@+id/login"
             android:text="로그인"
+            android:fontFamily="@font/nanumhim"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/solid_button"
@@ -59,6 +62,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="20sp"
+                android:fontFamily="@font/nanumhim"
                 android:text="로그인" />
             <TextView
                 android:id="@+id/회원가입"
@@ -66,6 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
+                android:textSize="20sp"
+                android:fontFamily="@font/nanumhim"
                 android:text="회원가입" />
         </LinearLayout>
     </LinearLayout>
@@ -75,21 +82,28 @@
         android:layout_weight="1"
         android:orientation="horizontal" >
         <Button
-            android:id="@+id/카카오톡로그인"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/nanumhim"
+            android:textSize="25sp"
             android:text="지도"
             android:id="@+id/지도"/>
         <Button
+            android:id="@+id/카카오톡로그인"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumhim"
+            android:textSize="25sp"
             android:layout_weight="1"
-            android:text="버튼6" />
+            android:text="카카오톡로그인" />
         <Button
+            android:id="@+id/홈화면이동"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumhim"
+            android:textSize="25sp"
             android:layout_weight="1"
-            android:text="버튼6" />
+            android:text="홈화면" />
     </LinearLayout>
 </LinearLayout>
