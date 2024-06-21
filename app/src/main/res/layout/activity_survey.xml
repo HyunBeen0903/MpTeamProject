@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SurveyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 성별 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="성별"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/gender_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남자" />
+
+        <CheckBox
+            android:id="@+id/gender_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여자" />
+
+        <!-- 나이 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나이"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/age_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <!-- 여행 테마 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여행 테마"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/theme_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="식도락" />
+
+        <CheckBox
+            android:id="@+id/theme_culture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="문화체험" />
+
+        <CheckBox
+            android:id="@+id/theme_sports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="스포츠" />
+
+        <CheckBox
+            android:id="@+id/theme_nature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자연" />
+
+        <CheckBox
+            android:id="@+id/theme_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="역사" />
+
+        <!-- 여행 시간 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여행 시간"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/time_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 비용 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비용"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/cost_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 제출 버튼 -->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제출"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</ScrollView>
