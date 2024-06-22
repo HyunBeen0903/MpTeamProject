@@ -6,17 +6,28 @@
     >
 
     <LinearLayout
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom"
         android:layout_weight="1">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="40sp"
-        android:textColor="#ff0000ff"
-        android:text="see흥" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="40sp"
+                android:textColor="#ff0000ff"
+                android:text="see흥" />
+            <Button
+                android:id ="@+id/취향"
+                android:layout_marginLeft="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
