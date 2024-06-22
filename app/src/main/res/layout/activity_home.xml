@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
         android:layout_weight="1">
     <TextView
         android:layout_width="match_parent"
@@ -13,128 +16,238 @@
         android:layout_weight="1"
         android:textSize="40sp"
         android:textColor="#ff0000ff"
-        android:fontFamily="@font/nanumhim"
         android:text="see흥" />
 
     </LinearLayout>
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop = "100dp"
-        android:layout_height="650dp"
-        android:layout_weight="5"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        >
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="650dp"
+            android:scrollbars="none">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left"
+                    >
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/oedo"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:text="오이도 빨간등대"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="안녕?"
+                    android:textSize="100dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            >
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="안녕?"
-                android:textSize="100dp" />
-
-
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/homebutton"></ImageView>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/homebutton"
+                >
+            </ImageView>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/homebutton"></ImageView>
         </LinearLayout>
-
-
-    </ScrollView>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        >
-
-
     </LinearLayout>
 
 
