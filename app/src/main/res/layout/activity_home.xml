@@ -45,6 +45,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <LinearLayout
+                    android:id = "@+id/등대"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
