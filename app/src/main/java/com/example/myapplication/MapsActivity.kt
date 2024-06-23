@@ -1,8 +1,7 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -40,6 +39,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val sydney = LatLng(37.3401906, 126.7335293)
         mMap.addMarker(MarkerOptions().position(sydney).title("한국공대"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 100.0F))
     }
 }
