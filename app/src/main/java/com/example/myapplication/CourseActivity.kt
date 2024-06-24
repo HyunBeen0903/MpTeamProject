@@ -9,5 +9,6 @@ class CourseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_course)
+        var coursename = intent.getStringExtra("coursename")
     }
 }
