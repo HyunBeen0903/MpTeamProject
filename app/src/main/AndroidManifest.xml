@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".GlobalApplication"
@@ -31,7 +33,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAG4ilTFHpsOAuqEP-DX5fkhzHcRGSLGCI" />
+            android:value="AIzaSyCH7VqH6AwfWwyozw6-EbLE6CYdEHMuGuo" />
 
         <activity
             android:name=".MapsActivity"

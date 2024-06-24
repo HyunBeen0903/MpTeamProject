@@ -56,6 +56,7 @@ class PlacesActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMark
         // Create a new Places client instance
         placesClient = Places.createClient(this)
 
+
         // Initialize views
         searchInput = findViewById(R.id.search_input)
         searchButton = findViewById(R.id.search_button)
@@ -85,7 +86,7 @@ class PlacesActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMark
         mMap = googleMap
 
         // Move the camera to a default location (e.g., Sydney)
-        val defaultLocation = LatLng(-34.0, 151.0)
+        val defaultLocation = LatLng(37.3401906, 126.7335293)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 10f))
 
         // Check location permission
@@ -198,6 +199,21 @@ class PlacesActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMark
                     polylineOptions.add(LatLng(point.latitude, point.longitude))
                 }
                 mMap.addPolyline(polylineOptions)
+            }
+        }
+    }
+
+    private fun loadPlaces() {
+        firestoreHelper.getPlaces { places ->
+            places.forEach { place ->
+                val location = place.location
+                if (location != null) {
+                    val latLng = LatLng(location.latitude, location.longitude)
+                    val marker = mMap.addMarker(MarkerOptions().position(latLng).title(place.name))
+                    if (marker != null) {
+                      //  markerPlaceIdMap[marker] = place
+                    }
+                }
             }
         }
     }
