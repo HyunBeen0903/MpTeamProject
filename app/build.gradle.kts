@@ -50,6 +50,11 @@ dependencies {
     implementation ("com.google.android.gms:play-services-maps:18.0.2") //지도
     implementation ("com.google.firebase:firebase-auth")    //회원가입
 
+    implementation ("com.google.android.gms:play-services-location:21.0.1") //위치
+    implementation ("com.google.android.libraries.places:places:3.0.0")
+
+    implementation ("com.google.firebase:firebase-firestore-ktx:24.5.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
