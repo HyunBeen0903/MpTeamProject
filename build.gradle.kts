@@ -7,8 +7,14 @@ plugins {
 
 }
 buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
     dependencies {
         // Add this line
         classpath ("com.google.gms:google-services:4.3.10")
+        classpath ("com.android.tools.build:gradle:8.0.0")  // 최신 버전 확인 후 설정
+        classpath ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0")  // 최신 버전 확인 후 설정
     }
 }
