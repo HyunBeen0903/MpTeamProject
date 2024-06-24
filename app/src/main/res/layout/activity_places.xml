@@ -5,32 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".PlacesActivity">
 
-    <!-- 검색 입력란 -->
-    <EditText
-        android:id="@+id/search_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_margin="16dp"
-        android:hint="Enter a place" />
-
-    <!-- 검색 버튼 -->
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/search_input"
-        android:layout_margin="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Search" />
 
     <!-- Google Map -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/search_button" />
+        android:layout_height="match_parent" />
 
     <!-- 정보창 -->
     <LinearLayout

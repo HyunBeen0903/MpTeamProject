@@ -38,16 +38,10 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".PlacesActivity"
-            android:exported="false" />
-        <activity
             android:name=".NewAccountPage"
             android:exported="false" />
         <activity
             android:name=".UserCourse"
-            android:exported="false" />
-        <activity
-            android:name=".FirestoreHelper"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

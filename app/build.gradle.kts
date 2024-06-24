@@ -47,7 +47,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-database-ktx")
     implementation ("com.google.firebase:firebase-firestore-ktx")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.google.android.libraries.places:places:2.5.0")
 
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.android.gms:play-services-maps:18.0.2") //지도
     implementation ("com.google.firebase:firebase-auth")    //회원가입
 
