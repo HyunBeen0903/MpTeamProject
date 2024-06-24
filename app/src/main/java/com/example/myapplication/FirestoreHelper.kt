@@ -34,4 +34,29 @@ class FirestoreHelper {
                 onComplete(emptyList())
             }
     }
+
+    fun savePlace(place: Place, onComplete: (Boolean) -> Unit) {
+        db.collection("places")
+            .add(place)
+            .addOnSuccessListener {
+                onComplete(true)
+            }
+            .addOnFailureListener {
+                onComplete(false)
+            }
+    }
+
+    fun getPlaces(onComplete: (List<Place>) -> Unit) {
+        db.collection("places")
+            .get()
+            .addOnSuccessListener { result ->
+                val places = result.map { document ->
+                    document.toObject(Place::class.java)
+                }
+                onComplete(places)
+            }
+            .addOnFailureListener {
+                onComplete(emptyList())
+            }
+    }
 }

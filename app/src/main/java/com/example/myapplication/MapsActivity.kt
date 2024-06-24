@@ -26,6 +26,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var mMap: GoogleMap
     private lateinit var placesClient: PlacesClient
 
+
     companion object {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
     }
