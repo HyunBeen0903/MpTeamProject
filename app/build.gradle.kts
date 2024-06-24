@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation("com.kakao.sdk:v2-user:2.20.1")
+    implementation("com.kakao.sdk:v2-user:2.20.1")  //카카오톡로그인
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-database-ktx")
@@ -55,6 +55,7 @@ dependencies {
     implementation ("com.google.android.libraries.places:places:3.0.0")
 
     implementation ("com.google.firebase:firebase-firestore-ktx:24.5.0")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
