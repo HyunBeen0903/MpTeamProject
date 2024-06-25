@@ -5,6 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -47,6 +49,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var placeWebsite: TextView
     private lateinit var blogLinkTextView: TextView
 
+    private lateinit var searchEditText: EditText
+    private lateinit var searchButton: Button
 
     private val markerPlaceIdMap = mutableMapOf<Marker, String>()
 
@@ -76,8 +80,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         placeWebsite = findViewById(R.id.place_website)
         blogLinkTextView = findViewById(R.id.blog_website)
 
+        searchEditText = findViewById(R.id.search_edit_text)
+        searchButton = findViewById(R.id.search_button)
 
-
+        searchButton.setOnClickListener {
+            val query = searchEditText.text.toString()
+            if (query.isNotEmpty()) {
+                searchPlace(query)
+            }
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -147,6 +158,41 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             .addOnFailureListener { exception ->
                 Log.e("MapsActivity", "Error getting documents: ", exception)
             }
+    }
+    private fun searchPlace(query: String) {
+        val apiKey = getString(R.string.MAPS_API_KEY)
+        Thread {
+            val placeId = getPlaceId(apiKey, query)
+            runOnUiThread {
+                if (placeId != null) {
+                    fetchPlaceInfo(placeId, null)
+                    showMarkerForPlace(placeId, query)
+                } else {
+                    Log.e("MapsActivity", "Place ID not found for query: $query")
+                }
+            }
+        }.start()
+    }
+
+    private fun showMarkerForPlace(placeId: String, placeName: String) {
+        val placeFields = listOf(
+            Place.Field.ID,
+            Place.Field.NAME,
+            Place.Field.LAT_LNG
+        )
+        val request = FetchPlaceRequest.newInstance(placeId, placeFields)
+
+        placesClient.fetchPlace(request).addOnSuccessListener { response ->
+            val place = response.place
+            val latLng = place.latLng
+            if (latLng != null) {
+                val marker = mMap.addMarker(MarkerOptions().position(latLng).title(placeName))
+                marker?.tag = Pair(placeId, null)
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+            }
+        }.addOnFailureListener { exception ->
+            Log.e("MapsActivity", "Place not found: ", exception)
+        }
     }
 
     private fun fetchPlaceInfo(placeId: String, blog: String?) {
