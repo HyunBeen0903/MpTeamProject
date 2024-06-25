@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffffff"
     android:orientation="vertical" >
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="60sp"
+            android:textSize="90sp"
             android:fontWeight = "900"
             android:fontFamily="@font/nanumhim"
             android:text="로그인" />
@@ -43,15 +44,11 @@
             android:id="@+id/login"
             android:text="로그인"
             android:fontFamily="@font/nanumhim"
-            android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:background="@drawable/solid_button"
             android:shadowColor="#000000"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"/>
         <LinearLayout

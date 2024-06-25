@@ -2,12 +2,15 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.kakao.sdk.user.Constants.TAG
+import com.kakao.sdk.user.UserApiClient
 
 //Kangjihun Branch
 class MainActivity : AppCompatActivity() {
@@ -26,8 +29,24 @@ class MainActivity : AppCompatActivity() {
         var home = findViewById<Button>(R.id.홈화면이동)
         val mapButton = findViewById<Button>(R.id.지도)
         val loginButton = findViewById<Button>(R.id.login)
+        val kakaologin = findViewById<Button>(R.id.카카오톡로그인)
         val id = findViewById<EditText>(R.id.idEditText)
         val password = findViewById<EditText>(R.id.passwordEditTest)
+
+        kakaologin.setOnClickListener{
+            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
+                if (error != null) {
+                    Log.e(TAG, "로그인 실패", error)
+                }
+                else if (token != null) {
+                    Log.i(TAG, "로그인 성공 ${token.accessToken}")
+                    var intent = Intent(applicationContext, HomeActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+
+        }
+
         txt.setOnClickListener {
             var intent = Intent(applicationContext, NewAccountPage::class.java)
             startActivity(intent)
