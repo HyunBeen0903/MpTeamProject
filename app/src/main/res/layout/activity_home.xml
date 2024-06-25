@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffffff"
     android:orientation="vertical">
 
     <!-- 상단 로고와 설문조사 버튼 -->
@@ -9,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="#ffffffff"
         android:padding="16dp">
 
         <ImageView
@@ -46,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background = "@drawable/backgroundblackline"
                 android:padding="16dp">
 
                 <ImageView
@@ -69,6 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background = "@drawable/backgroundblackline"
                 android:padding="16dp">
 
                 <ImageView
@@ -95,6 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@drawable/backgroundblackline"
         android:padding="16dp"
         android:gravity="center">
 
@@ -104,17 +109,15 @@
             android:layout_height="50dp"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="70dp"
-            android:background="@android:color/holo_blue_light"
             android:contentDescription="지도"
-            android:src="@drawable/mapss" />
+            android:src="@drawable/baseline_map_24" />
 
         <ImageView
             android:id="@+id/home_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/homebutton"
+            android:src="@drawable/baseline_anchor_24"
             android:contentDescription="홈"
-            android:background="@android:color/holo_green_light"
             android:layout_marginEnd="80dp" />
 
         <ImageView
@@ -122,9 +125,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="16dp"
-            android:background="@android:color/holo_red_light"
             android:contentDescription="코스 추천"
-            android:src="@drawable/recommend" />
+            android:src="@drawable/baseline_account_box_24" />
     </LinearLayout>
 
 </LinearLayout>
