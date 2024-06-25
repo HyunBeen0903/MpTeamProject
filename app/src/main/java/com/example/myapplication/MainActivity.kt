@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.kakao.sdk.user.Constants.TAG
 import com.kakao.sdk.user.UserApiClient
 
-//Kangjihun Branch
+// Kangjihun Branch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
@@ -22,12 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        mAuth = FirebaseAuth.getInstance()      //로그인
+        mAuth = FirebaseAuth.getInstance()      // 로그인
 
-
-        var txt = findViewById<TextView>(R.id.회원가입)
-        var home = findViewById<Button>(R.id.홈화면이동)
-        val mapButton = findViewById<Button>(R.id.지도)
+        val txt = findViewById<TextView>(R.id.회원가입)
         val loginButton = findViewById<Button>(R.id.login)
         val kakaologin = findViewById<Button>(R.id.카카오톡로그인)
         val id = findViewById<EditText>(R.id.idEditText)
@@ -40,35 +37,23 @@ class MainActivity : AppCompatActivity() {
                 }
                 else if (token != null) {
                     Log.i(TAG, "로그인 성공 ${token.accessToken}")
-                    var intent = Intent(applicationContext, HomeActivity::class.java)
+                    val intent = Intent(applicationContext, HomeActivity::class.java)
                     startActivity(intent)
                 }
             }
-
         }
 
         txt.setOnClickListener {
-            var intent = Intent(applicationContext, NewAccountPage::class.java)
-            startActivity(intent)
-        }
-        home.setOnClickListener {
-            var intent = Intent(applicationContext, HomeActivity::class.java)
-            startActivity(intent)
-        }
-        mapButton.setOnClickListener {
-            val intent = Intent(applicationContext, MapsActivity::class.java)
+            val intent = Intent(applicationContext, NewAccountPage::class.java)
             startActivity(intent)
         }
 
         loginButton.setOnClickListener {
-            val id = id.text.toString()
-            val password = password.text.toString()
+            val userId = id.text.toString()
+            val userPassword = password.text.toString()
 
-            loginUser(id, password)
+            loginUser(userId, userPassword)
         }
-        //val database = Firebase.database
-        //  val myRef = database.getReference("message")
-        //  myRef.setValue("Hello, Firebase")
     }
 
     private fun loginUser(email: String, password: String) {
@@ -89,6 +74,5 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-
     }
 }
