@@ -58,6 +58,8 @@ dependencies {
     implementation ("com.google.android.libraries.places:places:3.0.0")
 
     implementation ("com.google.firebase:firebase-firestore-ktx:24.5.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation ("org.json:json:20210307")
 
 
     implementation(libs.androidx.core.ktx)

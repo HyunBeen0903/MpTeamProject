@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -24,6 +26,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
+import org.json.JSONObject
+import java.io.IOException
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -38,6 +45,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var placePhone: TextView
     private lateinit var placeRating: TextView
     private lateinit var placeWebsite: TextView
+    private lateinit var blogLinkTextView: TextView
+
 
     private val markerPlaceIdMap = mutableMapOf<Marker, String>()
 
@@ -65,6 +74,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         placePhone = findViewById(R.id.place_phone)
         placeRating = findViewById(R.id.place_rating)
         placeWebsite = findViewById(R.id.place_website)
+        blogLinkTextView = findViewById(R.id.blog_website)
+
+
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -78,10 +91,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
-        val placeId = marker.tag as? String
+        val tagData = marker.tag as? Pair<String, String>
+        val placeId = tagData?.first
+        val blog = tagData?.second
         if (placeId != null) {
             Log.d("MapsActivity", "Fetching place info for ID: $placeId")
-            fetchPlaceInfo(placeId)
+            fetchPlaceInfo(placeId, blog)
         } else {
             marker.showInfoWindow()
         }
@@ -97,15 +112,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
                     if (locations != null) {
                         val polylineOptions = PolylineOptions()
+                        val apiKey = getString(R.string.MAPS_API_KEY) // Your Google API Key
+
                         locations.forEach { point ->
                             val geoPoint = point["location"] as? GeoPoint
                             val pointName = point["name"] as? String
-                            val placeId = point["placeId"] as? String
+                            val blog = point["blog"]as? String
                             if (geoPoint != null && pointName != null) {
                                 val position = LatLng(geoPoint.latitude, geoPoint.longitude)
                                 val marker = mMap.addMarker(MarkerOptions().position(position).title(pointName))
-                                marker?.tag = placeId // placeId를 마커에 태그로 저장
+                                Thread {
+                                    val placeId = getPlaceId(apiKey, pointName)
+                                    runOnUiThread {
+                                        marker?.tag = Pair(placeId, blog)
+                                    }
+                                }.start()
                                 polylineOptions.add(position)
+
                             }
                         }
 
@@ -126,7 +149,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             }
     }
 
-    private fun fetchPlaceInfo(placeId: String) {
+    private fun fetchPlaceInfo(placeId: String, blog: String?) {
         val placeFields = listOf(
             Place.Field.ID,
             Place.Field.NAME,
@@ -138,13 +161,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             Place.Field.USER_RATINGS_TOTAL,
             Place.Field.WEBSITE_URI
         )
+
         val request = FetchPlaceRequest.newInstance(placeId, placeFields)
 
         placesClient.fetchPlace(request).addOnSuccessListener { response ->
             val place = response.place
 
             Log.d("MapsActivity", "Place found: ${place.name}")
-            showPlaceInfo(place)
+            showPlaceInfo(place,blog)
 
             val photoMetadata = place.photoMetadatas?.firstOrNull()
             if (photoMetadata != null) {
@@ -170,13 +194,51 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         }
     }
 
-    private fun showPlaceInfo(place: Place) {
+    private fun showPlaceInfo(place: Place,blog:String?) {
         placeName.text = place.name
         placeAddress.text = place.address ?: "주소 없음"
         placePhone.text = place.phoneNumber ?: "전화번호 없음"
         placeRating.text = "별점: ${place.rating ?: "N/A"} (${place.userRatingsTotal ?: 0} 리뷰)"
         placeWebsite.text = place.websiteUri?.toString() ?: "웹사이트 없음"
 
+        if (!blog.isNullOrEmpty()) {
+            blogLinkTextView.setOnClickListener {
+                val blogIntent = Intent(Intent.ACTION_VIEW, Uri.parse(blog))
+                startActivity(blogIntent)
+            }
+        }else{
+            blogLinkTextView.visibility = View.GONE
+        }
         placeInfoContainer.visibility = View.VISIBLE
+    }
+    private fun getPlaceId(apiKey: String, placeName: String): String? {
+        val client = OkHttpClient()
+
+        val url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json" +
+                "?input=${placeName.replace(" ", "%20")}" +
+                "&inputtype=textquery" +
+                "&fields=place_id" +
+                "&key=$apiKey"
+
+        val request = Request.Builder()
+            .url(url)
+            .build()
+
+        return try {
+            client.newCall(request).execute().use { response ->
+                if (!response.isSuccessful) throw IOException("Unexpected code $response")
+
+                val responseData = response.body?.string()
+                val json = JSONObject(responseData)
+                val candidates = json.getJSONArray("candidates")
+                if (candidates.length() > 0) {
+                    return candidates.getJSONObject(0).getString("place_id")
+                }
+            }
+            null
+        } catch (e: IOException) {
+            e.printStackTrace()
+            null
+        }
     }
 }

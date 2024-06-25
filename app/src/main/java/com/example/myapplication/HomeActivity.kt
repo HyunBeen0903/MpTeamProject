@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.common.collect.Maps
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
         val firstImageLayout = findViewById<LinearLayout>(R.id.등대)
         firstImageLayout.setOnClickListener {
             val coursename = findViewById<TextView>(R.id.장소이름).text.toString()
-            val intent = Intent(this, CourseActivity::class.java)
+            val intent = Intent(this, MapsActivity::class.java)
             intent.putExtra("coursename", coursename)
             startActivity(intent)
         }
