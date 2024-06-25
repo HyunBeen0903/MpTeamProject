@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CourseActivity">
-    <LinearLayout
+    android:orientation="vertical">
+
+    <!-- Google 지도 표시 -->
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
-        android:layout_weight="3"
-        android:background="#ff000000"
-        >
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#ffffffff"
-        >
-    </LinearLayout>
-    <LinearLayout
+        android:tag="map_fragment" />
+
+    <!-- 코스 이름 표시 -->
+    <TextView
+        android:id="@+id/course_name"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
-        android:layout_weight="2"
-        android:background="#ffff0000"
-        >
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="오이도 빨간등대 코스"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 하단에 블로그 정보 링크 -->
+    <TextView
+        android:id="@+id/blog_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="블로그 정보 보기"
+        android:textColor="@color/colorAccent"
+        android:textStyle="italic"
+        android:clickable="true"
+        android:focusable="true" />
 
 </LinearLayout>
